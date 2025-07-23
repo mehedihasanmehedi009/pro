@@ -25,6 +25,35 @@
 img {
   max-width: 100%;
 }
+/* animatin */
+@keyframes banner-animation {
+  0% {
+    opacity: 0;
+    transform: translate(-23px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-0);
+  }
+}
+@keyframes banner-player-animation {
+  0% {
+    opacity: 0.5;
+    transform: translate(-20px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-0);
+  }
+}
 /* .banner */
 
 .banner {
@@ -34,12 +63,14 @@ img {
   color: white;
   border-radius: 50px;
   margin: 50px auto;
+  animation: banner-animation 1s forwards ease-in-out;
 }
 .banner-left {
   padding-left: 50px;
   flex: 1;
 }
 .banner-right img {
+  animation: banner-player-animation 0.5s ease-in forwards infinite;
   display: block;
 }
 .banner h2 {
@@ -118,6 +149,10 @@ img {
 }
 /* tablet-media */
 @media screen and (max-width: 992px) {
+  .cantainer {
+    margin: 0 20px;
+  }
+
   .banner h2 {
     font-size: 50px;
     line-height: 50px;
@@ -141,8 +176,11 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
+/* modile-media */
 @media screen and (max-width: 575px) {
+  .cantainer {
+    margin: 0 20px;
+  }
   .banner {
     flex-direction: column;
     text-align: center;
@@ -153,7 +191,7 @@ img {
     padding-top: 20px;
   }
 
-  .card {
+  .upcoming-matches-right {
     grid-template-columns: repeat(1, 1fr);
   }
 }
